@@ -37,7 +37,7 @@ The Application's output during the read phase.
 ### Why
 I couldn't find anything similar on Linux when I first needed this app.
 
-Branded flash drives, and I'm sorry to say it, but particularly Chinese branded flash drives, can be extremely nasty. Manufacturers use all kinds of tricks to it look like their flash drives work, when they don't. MD5 summing the resulting storage is a highly effective way of picking up on faults, including faults hidden by FAT bad-blocks and the like.
+Corporate branded USB flash drives, and I'm sorry to say it but particularly flash drives from a particular world-power Asian state, can be extremely nasty. Manufacturers use all kinds of tricks to make it look like their flash drives work, when they don't. MD5 summing the resulting storage is a highly effective way of picking up on faults, including faults hidden by FAT bad-blocks and the like.
 
 In my experience so far, drive failures tend to be broken down as such :
 - immediate failure on insert (the kernel usually says "media not found" or "media not inserted")
