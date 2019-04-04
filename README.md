@@ -16,18 +16,22 @@ It'll then report that it is ready. This can be monitored by tailing the log fil
 At this point, ANY newly inserted USB drive connected to the host machine will be overwritten with your source image. So start by inserting USB flash drives, one after the other, generally with a delay. DiskDuplicator will launch a goroutine for each inserted drive, write the image and then read it back*.
 
 A good image write will be logged as such in errors.log :
+
 ```2019/04/04 13:16:04 GOOD :  /mnt/fioa/FDC19/image.img /dev/disk/by-id/usb-Generic_Flash_Disk_013D7291-0:0```
 
 I find that it's useful to monitor the kernel message output while inserting drives : dmesg -w
 as I've personally found *many* flash drives to fail on insert or shortly after.
 
 ![Alt text](disk-detected.jpg?raw=true "disk detected")
+
 (example of a disk detected by the kernel - this one went on to fail)
 
 ![Alt text](existing-disks.jpg?raw=true "existing disks detected")
+
 errors.log during application startup
 
 ![Alt text](in-runtime.jpg?raw=true "console during image write")
+
 The Application's output during the read phase.
 
 ### Why
@@ -45,7 +49,7 @@ In my experience so far, drive failures tend to be broken down as such :
 
 Of particular irritation is that ignorant middle-men/local suppliers often don't understand these failures and think USB flash drives *cannot fail*.
 
-Anyway, this application detects all of that.
+This application detects all of this crap.
 
 ### Building
 go get -v github.com/aquarat/diskduplicator
